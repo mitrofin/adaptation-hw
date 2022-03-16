@@ -2,29 +2,47 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from '../Statistics/Statistics.module.css';
 
-export default function Statistics(props) {
-  return (
-    <section class="statistics">
-      <h2 class="title">Upload stats</h2>
+/* function getRandom() {
+    return Math.floor(Math.random() * 256);
+} */
 
-      <ul class="stat-list">
-        <li class="item">
-          <span class="label">.docx</span>
-          <span class="percentage">4%</span>
-        </li>
-        <li class="item">
-          <span class="label">.mp3</span>
-          <span class="percentage">14%</span>
-        </li>
-        <li class="item">
-          <span class="label">.pdf</span>
-          <span class="percentage">41%</span>
-        </li>
-        <li class="item">
-          <span class="label">.mp4</span>
-          <span class="percentage">12%</span>
-        </li>
+function colorRandomizer() {
+  return `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(
+    Math.random() * 256,
+  )}, ${Math.floor(Math.random() * 256)}, 0.5)`;
+}
+
+export default function Statistics(props) {
+  const { title, stats } = props;
+  return (
+    <section
+      className={s.statistics}
+      /* style={{ backgroundColor: colorRandomizer() }} */
+    >
+      {title && <h2 className={s.title}>{title}</h2>}
+
+      <ul className={s.statList}>
+        {stats.map(stat => (
+          <li
+            key={stat.id}
+            className={s.item}
+            style={{ backgroundColor: colorRandomizer() }}
+          >
+            <span className={s.label}>{stat.label}</span>
+            <span className={s.percentage}>{stat.percentage}%</span>
+          </li>
+        ))}
       </ul>
     </section>
   );
 }
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
