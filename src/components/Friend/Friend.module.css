@@ -1,0 +1,41 @@
+.item {
+  width: 350px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px 5px rgb(163, 163, 163);
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  margin: 20px auto;
+}
+.item:hover {
+  background-color: antiquewhite;
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px 5px white;
+}
+ul {
+  list-style: none;
+}
+.status {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.online {
+  composes: status;
+  background-color: green;
+}
+.offline {
+  composes: status;
+  background-color: red;
+}
+
+.name {
+  margin: 0;
+  color: rgb(71, 71, 71);
+  font-size: x-large;
+  font-weight: 500;
+}
