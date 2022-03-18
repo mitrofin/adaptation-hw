@@ -1,0 +1,71 @@
+.transaction {
+  width: 450px;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 5px 5px 15px 5px grey;
+  border-radius: 5px;
+  padding: 0;
+}
+.head {
+  text-align: left;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 10px;
+}
+.theader {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'head head head';
+
+  background-color: rgb(47, 192, 192);
+  color: #ffffff;
+}
+.tBody {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'type amount currency';
+  /* padding: 5px; */
+}
+.even {
+  composes: tBody;
+  background-color: rgb(223, 255, 251);
+}
+.odd {
+  composes: tBody;
+  background-color: rgb(164, 213, 214);
+}
+.type,
+.amount,
+.currency {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ffffff;
+}
+.type::first-letter {
+  text-transform: uppercase;
+}
+.type:hover,
+.amount:hover,
+.currency:hover,
+.type:focus,
+.amount:focus,
+.currency:focus {
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.32);
+  border-radius: 5px;
+  background-color: rgb(100, 100, 100);
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+}
+/* .amount {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ffffff;
+}
+.currency {
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ffffff;
+}
+ */
