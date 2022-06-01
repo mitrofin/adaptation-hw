@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/adaptation-hw/static/css/main.759bfbd8.css",
+    "main.js": "/adaptation-hw/static/js/main.150a38ce.js",
+    "index.html": "/adaptation-hw/index.html",
+    "main.759bfbd8.css.map": "/adaptation-hw/static/css/main.759bfbd8.css.map",
+    "main.150a38ce.js.map": "/adaptation-hw/static/js/main.150a38ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.759bfbd8.css",
+    "static/js/main.150a38ce.js"
+  ]
+}
